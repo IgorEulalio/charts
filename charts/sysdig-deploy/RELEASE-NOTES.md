@@ -1,5 +1,5 @@
 # What's Changed
 
 ### Bug Fixes
-- **kspm-collector,node-analyzer** [67f042fd](https://github.com/sysdiglabs/charts/commit/67f042fd9ebb72cd121751d46fb96f7c3ad539ba): add debug logs to cloud platform metadata loading ([#1398](https://github.com/sysdiglabs/charts/issues/1398))
-#### Full diff: https://github.com/sysdiglabs/charts/compare/sysdig-deploy-1.24.2...sysdig-deploy-1.24.3
+- **cluster-scanner** [9b3864ff](https://github.com/sysdiglabs/charts/commit/9b3864fffdc9e8b7e8fdc96f8ed4902f945c34c7): removed unneeded version compatibility checks ([#1404](https://github.com/sysdiglabs/charts/issues/1404))
+#### Full diff: https://github.com/sysdiglabs/charts/compare/sysdig-deploy-1.24.4...sysdig-deploy-1.24.5
