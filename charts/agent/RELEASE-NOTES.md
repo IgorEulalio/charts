@@ -1,5 +1,3 @@
 # What's Changed
 
-### New Features
-- [45e2f7a9](https://github.com/sysdiglabs/charts/commit/45e2f7a96c565bfe0687acaacf350e81f94a23bb): release agent 12.16.2 ([#1381](https://github.com/sysdiglabs/charts/issues/1381))
-#### Full diff: https://github.com/sysdiglabs/charts/compare/agent-1.13.11...agent-1.13.12
+#### Full diff: https://github.com/sysdiglabs/charts/compare/agent-1.13.15...agent-1.14.0

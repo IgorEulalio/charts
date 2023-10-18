@@ -10,6 +10,18 @@ Manual edits are supported only below '## Change Log' and should be used
 exclusively to fix incorrect entries and not to add new ones.
 
 ## Change Log
+# v0.8.0
+### New Features
+* **cluster-scanner** [23b421c6](https://github.com/sysdiglabs/charts/commit/23b421c60dafe24c2e777f38c490e7f88c2c42a4): Enable platform services only in regions which support them ([#1413](https://github.com/sysdiglabs/charts/issues/1413))
+# v0.7.2
+### Bug Fixes
+* **cluster-scanner** [9b3864ff](https://github.com/sysdiglabs/charts/commit/9b3864fffdc9e8b7e8fdc96f8ed4902f945c34c7): removed unneeded version compatibility checks ([#1404](https://github.com/sysdiglabs/charts/issues/1404))
+# v0.7.1
+### Bug Fixes
+* **common,agent,admission-controller,cluster-scanner,kspm-collector,node-analyzer,rapid-response** [e76f1c17](https://github.com/sysdiglabs/charts/commit/e76f1c17e48491dd8ea21293ec1fed2619eed204): Update Sysdig CA ([#1393](https://github.com/sysdiglabs/charts/issues/1393))
+# v0.7.0
+### New Features
+* **cluster-scanner** [5b1e9649](https://github.com/sysdiglabs/charts/commit/5b1e96497ef50342055f3f43bc9ff5f41f7cfea1): added configuration for docker registry mirrors ([#1372](https://github.com/sysdiglabs/charts/issues/1372))
 # v0.6.1
 ### Bug Fixes
 * **cluster-scanner** [3fe6f6e6](https://github.com/sysdiglabs/charts/commit/3fe6f6e659e43dfdaaf5211b34f32025283c2b18): corrected incompatibility with helm 3.9 ([#1383](https://github.com/sysdiglabs/charts/issues/1383))

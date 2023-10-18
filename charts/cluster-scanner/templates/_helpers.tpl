@@ -206,36 +206,15 @@ Define the proper imageRegistry to use for imageSbomExtractor
 {{- end -}}
 
 {{/*
-Cluster scanner version compatibility check.
-
-If .Values.onPremCompatibilityVersion is set to a version below 6.6.0, it checks whether
-the provided tag is < 0.5.0 .
-
-Otherwise, it checks if the provided tag is >= 0.5.0 .
-
-Version tags must be semver2-compatible otherwise no check will be performed.
-*/}}
-{{- define "cluster-scanner.checkVersionCompatibility" -}}
-{{- if regexMatch "^[0-9]+\\.[0-9]+\\.[0-9]+.*" .Tag -}}
-    {{- $version := .Tag -}}
-    {{- if ( semverCompare "< 6.6.0" ( .Values.onPremCompatibilityVersion | default "6.6.0" )) -}}
-        {{- if not ( semverCompare "< 0.5.0" $version ) -}}
-            {{- fail (printf "incompatible version for %s, set %s expected < 0.5.0" .Component .Tag) -}}
-        {{- end -}}
-    {{- else -}}
-        {{- if not ( semverCompare ">= 0.5.0" $version ) -}}
-            {{- fail (printf "incompatible version for %s, set %s expected >= 0.5.0" .Component .Tag) -}}
-        {{- end -}}
-    {{- end -}}
-{{- end -}}
-{{- end -}}
-
-{{/*
 Generates configmap data to enable platform services if onPremCompatibility version is not set, or it is greater than 6.6.0
+It also makes sure that the platform services are enabled in regions which support them when onPremCompatibility is not defined.
 */}}
 {{- define "cluster-scanner.enablePlatformServicesConfig" -}}
 {{- if ( semverCompare ">= 6.6.0" (.Values.onPremCompatibilityVersion | default "6.6.0" )) -}}
+    {{- $regionsPlatformEnabled := list "us1" "us2" "us3" "au1" "eu1" -}}
+    {{- if or (has .Values.global.sysdig.region $regionsPlatformEnabled) .Values.onPremCompatibilityVersion -}}
 enable_platform_services: "true"
+    {{- end -}}
 {{- end -}}
 {{- end -}}
 
@@ -244,7 +223,6 @@ Return the proper image name for the Runtime Status Integrator
 */}}
 {{- define "cluster-scanner.runtimeStatusIntegrator.image" -}}
     {{- $data := dict "Values" .Values "Tag" .Values.runtimeStatusIntegrator.image.tag "Component" "runtimeStatusIntegrator.image.tag" -}}
-    {{- include "cluster-scanner.checkVersionCompatibility" $data -}}
     {{- include "cluster-scanner.runtimeStatusIntegrator.imageRegistry" . -}} / {{- .Values.runtimeStatusIntegrator.image.repository -}} : {{- .Values.runtimeStatusIntegrator.image.tag -}}
 {{- end -}}
 
@@ -254,7 +232,6 @@ Return the proper image name for the Image Sbom Extractor
 {{- define "cluster-scanner.imageSbomExtractor.image" -}}
     {{- $data := dict "Values" .Values "Tag" .Values.imageSbomExtractor.image.tag -}}
     {{- $data := dict "Values" .Values "Tag" .Values.imageSbomExtractor.image.tag "Component" "imageSbomExtractor.image.tag" -}}
-    {{- include "cluster-scanner.checkVersionCompatibility" $data -}}
     {{- include "cluster-scanner.imageSbomExtractor.imageRegistry" . -}} / {{- .Values.imageSbomExtractor.image.repository -}} : {{- .Values.imageSbomExtractor.image.tag -}}
 {{- end -}}
 

@@ -10,6 +10,37 @@ Manual edits are supported only below '## Change Log' and should be used
 exclusively to fix incorrect entries and not to add new ones.
 
 ## Change Log
+# v1.26.0
+### New Features
+* **cluster-scanner** [23b421c6](https://github.com/sysdiglabs/charts/commit/23b421c60dafe24c2e777f38c490e7f88c2c42a4): Enable platform services only in regions which support them ([#1413](https://github.com/sysdiglabs/charts/issues/1413))
+# v1.25.0
+# v1.24.7
+### Chores
+* **sysdig-deploy** [b40e8e79](https://github.com/sysdiglabs/charts/commit/b40e8e79dade9bbcada01f406298bb411fd241c0): Automatic version bump due to updated dependencies ([#1411](https://github.com/sysdiglabs/charts/issues/1411))
+# v1.24.6
+### Chores
+* **sysdig-deploy** [7544fc18](https://github.com/sysdiglabs/charts/commit/7544fc18f6067d191023cb58f218d93f3e3de7f7): Automatic version bump due to updated dependencies ([#1408](https://github.com/sysdiglabs/charts/issues/1408))
+# v1.24.5
+### Bug Fixes
+* **cluster-scanner** [9b3864ff](https://github.com/sysdiglabs/charts/commit/9b3864fffdc9e8b7e8fdc96f8ed4902f945c34c7): removed unneeded version compatibility checks ([#1404](https://github.com/sysdiglabs/charts/issues/1404))
+# v1.24.4
+### New Features
+* **kspm-collector,node-analyzer** [660e610d](https://github.com/sysdiglabs/charts/commit/660e610d475cdac3b9d2c51da4af0a01abce31f6): add support for NATS_MAX_RECONNECT variable ([#1400](https://github.com/sysdiglabs/charts/issues/1400))
+# v1.24.3
+### Bug Fixes
+* **kspm-collector,node-analyzer** [67f042fd](https://github.com/sysdiglabs/charts/commit/67f042fd9ebb72cd121751d46fb96f7c3ad539ba): add debug logs to cloud platform metadata loading ([#1398](https://github.com/sysdiglabs/charts/issues/1398))
+# v1.24.2
+### Chores
+* **sysdig-deploy** [cec55804](https://github.com/sysdiglabs/charts/commit/cec55804dd45827f316d6f9e5c85fe9ff1eca11f): Automatic version bump due to updated dependencies ([#1397](https://github.com/sysdiglabs/charts/issues/1397))
+# v1.24.1
+### Bug Fixes
+* **common,agent,admission-controller,cluster-scanner,kspm-collector,node-analyzer,rapid-response** [e76f1c17](https://github.com/sysdiglabs/charts/commit/e76f1c17e48491dd8ea21293ec1fed2619eed204): Update Sysdig CA ([#1393](https://github.com/sysdiglabs/charts/issues/1393))
+# v1.24.0
+### New Features
+* **cluster-scanner** [5b1e9649](https://github.com/sysdiglabs/charts/commit/5b1e96497ef50342055f3f43bc9ff5f41f7cfea1): added configuration for docker registry mirrors ([#1372](https://github.com/sysdiglabs/charts/issues/1372))
+# v1.23.10
+### Chores
+* **sysdig-deploy** [92591ea5](https://github.com/sysdiglabs/charts/commit/92591ea579138af67a5dfe816433ee363494bf5f): Automatic version bump due to updated dependencies ([#1391](https://github.com/sysdiglabs/charts/issues/1391))
 # v1.23.9
 ### Chores
 * **sysdig-deploy** [a22de9d6](https://github.com/sysdiglabs/charts/commit/a22de9d6b1c94f8f0d4e5b0fdafccfa820c1bccb): Automatic version bump due to updated dependencies ([#1387](https://github.com/sysdiglabs/charts/issues/1387))
